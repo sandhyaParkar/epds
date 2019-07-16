@@ -1,2 +1,2 @@
-# epds
-Electronic Public Distribution System
+# Epds
+Electronic public distribution dapp. 

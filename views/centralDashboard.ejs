@@ -1,0 +1,42 @@
+<html>
+    <title>SocialHacks ePDS</title>
+    <head>
+        <link rel = "stylesheet" href = "/css/style.css">
+        <link rel = "stylesheet" href = "/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class = "col-md-12 central-first-header text-center">Ministry of consumer affairs, food and public distribution</div>
+        <div class = "col-md-12 text-center central-second-header">Food corporation of India</div>
+        <div class = "container">
+        <div class = "row wallet-display-row">
+            <div class = "col-md-4"></div>
+            <div class = "col-md-4 wallet-display-color">
+                <div>
+                    <div class = "col-md-12 text-center wallet-text">
+                        Asset Wallet
+                    </div>
+                </div>
+                <div class = "">
+                    <div id = "centralbalance" class = "col-md-12 text-left wallet-text">
+                        <%= sugar%> kg<br>
+                        <%= rice%> kg<br>
+                        <%= wheat%> kg<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id = "centralsendasset" class = "col-md-6 offset-md-3 asset-use-first text-left">
+            <a href="http://localhost:9494/csend"> 1. Send assets </a>
+        </div>
+        <div class = "col-md-6 offset-md-3 rest-option text-left">
+            <a href="http://localhost:9494/statedash"> 2. Asset tracking (State government)</a>
+        </div>
+        <div class = "col-md-6 offset-md-3 rest-option text-left">
+            <a href="http://localhost:9494/trackFairAsset">3. Asset tracking (Fair price shop)</a>
+        </div>
+        <div class = "col-md-6 offset-md-3 rest-option text-left">
+            <a href="http://localhost:9494/trackConsumerAsset"> 4. Asset tracking (Consumer)</a>
+        </div>
+    </body>
+</html>

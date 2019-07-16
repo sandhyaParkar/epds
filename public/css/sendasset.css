@@ -1,0 +1,30 @@
+.destination-label{
+    font-size: 22px;
+}
+.send-container-margin{
+    margin-top: 2%;
+}
+.input-text-size{
+    font-size: 22px;
+}
+.send-button{
+    background-color: grey;
+    font-size:24;
+    margin-top:20%
+}
+@media only screen and (max-width:950px){
+    .destination-label{
+        font-size: 18px;
+    }
+    .input-text-size{
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width:400px){
+    .destination-label{
+        font-size: 15px;
+    }
+    .input-text-size{
+        font-size: 15px;
+    }
+}

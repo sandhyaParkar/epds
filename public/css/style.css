@@ -1,0 +1,75 @@
+body{
+    font-family: sans-serif !important;
+}
+.central-first-header{
+    background-color: #efeded;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 25px;
+}
+.central-second-header{
+    background-color: #33337c;
+    color: white;
+    font-family: sans-serif;
+    font-size: 25px;
+}
+.wallet-display-color{
+    background: #8cb9e0;
+}
+.wallet-display-row{
+    margin: 0% !important;
+    margin-top: 2% !important;
+    margin-right: 1% !important;
+}
+.wallet-text{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 24px;
+}
+.asset-use-first{
+    background-color: #efeded;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 4%;
+}
+.rest-option{
+    background-color: #efeded;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 1%;
+}
+@media only screen and (max-width:950px){
+    .asset-use-first{
+        font-size: 20px;
+    }
+    .rest-option{
+        font-size: 20px;
+    }
+    .wallet-text{
+        font-size: 20px;
+    }
+    .central-first-header{
+        font-size: 22px;
+    }
+    .central-second-header{
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width:400px){
+    .asset-use-first{
+        font-size: 17px;
+    }
+    .rest-option{
+        font-size: 17px;
+    }
+    .wallet-text{
+        font-size: 17px;
+    }
+    .central-first-header{
+        font-size: 15px;
+    }
+    .central-second-header{
+        font-size: 15px;
+    }
+}
