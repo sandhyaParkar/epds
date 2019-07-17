@@ -12,21 +12,21 @@ app.use(express.urlencoded());
 
 
 let multichain = require('multichain-node')({
-    port :2766, 
+    port :2646, 
     host :"127.0.0.1",
     user :"multichainrpc",
-    pass :"9AcaQdVPSXZ1b5vFf4raHmzTET5bXTsFHiE9qgN4x8JT"
+    pass :"9d8nDMUxp9RoF7ZEm1cH7BhNRnU9FcLYtoAphxbmiZa7"
 });
 
-var central = "19QVT9g4mjEUYvkEiJRvEGepQ5rdCrwHN33ewB"; // Central  
-var gujarat = "15KEZNNwM2it9m5x1goVim4HH64bMu4WSBQ38R"; // State
+var central = "1HT51bM3bnccY6dAwp2e4WAYPK23og3FQqAq7s"; // Central  
+var gujarat = "1LNwf8Xd5vN1WAkDaukuUFv4sCLewwwwz2bog4"; // State
 //var orissa = "";
-//var telangana = "";
-var gShop ="1GPNcYYmuv4iPBmGbfHza9RH3HAvo8R87695y2"; // Fair Shop
-//var oShop = "";
-//var tShop = "";
-var gConsumer = "1aTtFL7Z12uLZTQfU3ruKNfbSpD8rEWeWFgprU"; // Consumer
-//var oConsumer = "";
+// //var telangana = "";
+var gShop ="1UjodjNqt2yRLiknMrYUMEdNpHtQn8G7nD9WT3"; // Fair Shop
+// //var oShop = "";
+// //var tShop = "";
+var gConsumer = "1MYXrStKKKd3GbU3gXw2tyEjXbZTsxcJUG6C7j"; // Consumer
+// //var oConsumer = "";
 //var tConsumer = "";
 
 var sugerWallet = "";
@@ -123,17 +123,17 @@ app.get('/dash', function(req, resp){
          //resp.json(info[0].name + "----"+info[0].qty +"------"+info[0].assetref);
          //resp.json(info[1].name + "----"+info[1].qty +"------"+info[1].assetref);
         // resp.json(info[2].name + "----"+info[2].qty +"------"+info[2].assetref);
-        for(var i = 0; i < 5; i++){
-            if(info[i].name == "Sugar"){
-                sugerWallet = info[i].name + " " + info[i].qty;
+        // for(var i = 0; i < 5; i++){
+            if(info[0].name == "Sugar"){
+                sugerWallet = info[0].name + " " + info[0].qty;
             }
-            else if(info[i].name == "rice"){
-                riceWallet = info[i].name + " " + info[i].qty;
+            else if(info[1].name == "rice"){
+                riceWallet = info[1].name + " " + info[1].qty;
             }
-            else if(info[i].name == "wheat"){
-                wheatWallet = info[i].name + " " + info[i].qty;
+            else if(info[2].name == "wheat"){
+                wheatWallet = info[2].name + " " + info[2].qty;
             }
-        }
+        // }
           //sugerWallet = info[4].name +" "+ info[4].qty;
           //wheatWallet = info[3].name +" "+ info[3].qty;
           //riceWallet = info[2].name +" "+ info[2].qty;
@@ -144,6 +144,44 @@ app.get('/dash', function(req, resp){
         //  console.log(wheatWallet);
     });
 });
+
+app.get('/shopdash', function(req, resp){
+    multichain.getAddressBalances({address: gShop},(err,info) => {
+        console.log("hi",info[0].name);
+      
+            if(info[0].name == "Sugar"){
+                sugerWallet = info[0].name + " " + info[0].qty;
+            }
+            else if(info[1].name == "rice"){
+                riceWallet = info[1].name + " " + info[1].qty;
+            }
+            else if(info[2].name == "wheat"){
+                wheatWallet = info[2].name + " " + info[2].qty;
+            }
+       
+       
+        resp.render('shopdash',{sugar:sugerWallet,rice:riceWallet,wheat:wheatWallet});
+        });
+    });
+
+    app.get('/consumerdash', function(req, resp){
+        multichain.getAddressBalances({address: gConsumer},(err,info) => {
+            console.log("hi",info[0].name);
+          
+                if(info[0].name == "Sugar"){
+                    sugerWallet = info[0].name + " " + info[0].qty;
+                }
+                else if(info[1].name == "rice"){
+                    riceWallet = info[1].name + " " + info[1].qty;
+                }
+                else if(info[2].name == "wheat"){
+                    wheatWallet = info[2].name + " " + info[2].qty;
+                }
+           
+           
+            resp.render('consumerdash',{sugar:sugerWallet,rice:riceWallet,wheat:wheatWallet});
+            });
+        });
 
 app.get('/csuccess', function(req, resp){
     multichain.getTotalBalances({
