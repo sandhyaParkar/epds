@@ -58,12 +58,24 @@ app.get('/txid', function(req, resp){
         });
     });
 });
-app.get('/create', function(req, resp){
-    multichain.issue({address:"1C7qR8KPTURxXXNTKeq8TH9DdeymCTEXvtchQf",asset:"Pen",qty:100000, units:0.01, details:{message:"Pen to issued"}},(err, rval)=>{
+app.get('/createAsset', function(req, resp){
+    console.log("request",req.body,central);
+    multichain.issue({address:'1HT51bM3bnccY6dAwp2e4WAYPK23og3FQqAq7s',asset:"Sugar5",qty:100000, units:0.01, details:{message:"Sugar to issued"}},(err, rval)=>{
         console.log("Sugar issued....");
         console.log(rval);
-        resp.send(rval);
+        // resp.render('createasset', {rval});
+        resp.render('createsuccess', {assetqty: "100000",txid: rval});
+
+        // resp.send(rval);
     });
+});
+app.get('/create', function(req, resp){
+    // console.log("request",req.body);
+    // multichain.issue({address:central,asset:"Sugar",qty:100000, units:0.01, details:{message:"Sugar to issued"}},(err, rval)=>{
+    //     console.log("Sugar issued....");
+    //     console.log(rval);
+        resp.render('createasset');
+        // resp.send(rval);
 });
 
 app.post('/send', function(req, resp){
@@ -124,15 +136,20 @@ app.get('/dash', function(req, resp){
          //resp.json(info[1].name + "----"+info[1].qty +"------"+info[1].assetref);
         // resp.json(info[2].name + "----"+info[2].qty +"------"+info[2].assetref);
         // for(var i = 0; i < 5; i++){
-            if(info[0].name == "Sugar"){
+            if(info[0].name == "Sugar5" || info[1].name == "Rice" || info[2].name == "Wheat"){
                 sugerWallet = info[0].name + " " + info[0].qty;
+                riceWallet = info[3].name + " " + info[3].qty;
+                wheatWallet = info[4].name + " " + info[4].qty;
+                // sugerWallet = info[0].name + " " + "0";
+                // riceWallet = info[1].name + " " + "0";
+                // wheatWallet = info[2].name + " " + "0";
             }
-            else if(info[1].name == "rice"){
-                riceWallet = info[1].name + " " + info[1].qty;
-            }
-            else if(info[2].name == "wheat"){
-                wheatWallet = info[2].name + " " + info[2].qty;
-            }
+            // else if(info[1].name == "rice"){
+            //     riceWallet = info[1].name + " " + info[1].qty;
+            // }
+            // else if(info[2].name == "wheat"){
+            //     wheatWallet = info[2].name + " " + info[2].qty;
+            // }
         // }
           //sugerWallet = info[4].name +" "+ info[4].qty;
           //wheatWallet = info[3].name +" "+ info[3].qty;
@@ -143,6 +160,7 @@ app.get('/dash', function(req, resp){
         //  console.log(riceWallet);
         //  console.log(wheatWallet);
     });
+
 });
 
 app.get('/shopdash', function(req, resp){
@@ -206,17 +224,20 @@ app.get('/csend', function(req, resp){
         "includeLocked":false
     }, (err,info) => {
         console.log(info);
-        for(var i = 0; i < 5; i++){
-            if(info[i].name == "Sugar"){
-                sugerWallet = info[i].name + " " + info[i].qty;
+        // for(var i = 0; i < 5; i++){
+            if(info[0].name == "Sugar5" || info[1].name == "Rice" || info[2].name == "Wheat"){
+                sugerWallet = info[0].name + " " + info[0].qty;
+                riceWallet = info[3].name + " " + info[3].qty;
+                wheatWallet = info[4].name + " " + info[4].qty;
             }
-            else if(info[i].name == "rice"){
-                riceWallet = info[i].name + " " + info[i].qty;
-            }
-            else if(info[i].name == "wheat"){
-                wheatWallet = info[i].name + " " + info[i].qty;
-            }
-        }
+            // else if(info[1].name == "Rice"){
+                
+            //     riceWallet = info[1].name + " " + info[1].qty;
+            // }
+            // else if(info[2].name == "Wheat"){
+            //     wheatWallet = info[2].name + " " + info[2].qty;
+            // }
+        // }
           //sugerWallet = info[4].name +" "+ info[4].qty;
           //wheatWallet = info[3].name +" "+ info[3].qty;
           //riceWallet = info[2].name +" "+ info[2].qty;

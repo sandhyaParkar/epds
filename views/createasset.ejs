@@ -1,0 +1,87 @@
+<html>
+    <title>RapidqubeEpdsSystem</title>
+    <head>
+        <link rel = "stylesheet" href = "/css/style.css">
+        <link rel = "stylesheet" href = "/css/sendasset.css">
+        <link rel = "stylesheet" href = "/css/bootstrap.min.css">
+        <script src="server.js"></script>
+    </head>
+    <body>
+        <form action="/createAsset" method="GET">
+        <div class = "col-md-12 central-first-header text-center">Ministry of consumer affairs, food and public distribution</div>
+        <div class = "col-md-12 text-center central-second-header">Food corporation of India</div>
+        <div class = "container">
+        <div class = "row wallet-display-row">
+            <div class = "col-md-4"></div>
+            <div class = "col-md-4 wallet-display-color">
+                <div>
+                    <div class = "col-md-12 text-center wallet-text">
+                        Asset Wallet
+                    </div>
+                </div>
+                <script>
+                    
+                </script>
+                <div class = "">
+                    <div class = "col-md-12 text-left wallet-text">
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class = "col-md-6 offset-md-3 asset-use-first text-left">
+            1. Create assets
+        </div>
+        <div class = "container send-container-margin">
+            <div class = "row">
+                <div class = "col-md-6 offset-md-3">
+                    <!-- <div class = "row">
+                        <div class = "col-md-5 destination-label text-left">
+                            Name of state
+                        </div>
+                        <div class = "col-md-7">
+                            <input id = "statename" name = "statename" type = "text" class = "input-text-size" value = "gujarat"></input>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class = "container send-container-margin">
+            <div class = "row">
+                <div class = "col-md-6 offset-md-3">
+                    <div class = "row">
+                        <div id="quantity" class = "col-md-5 destination-label text-left">
+                            Asset name
+                        </div>
+                        <div class = "col-md-7">
+                            <select id = "assetname" name="assetname">
+                                <option value="Sugar">Sugar</option>
+                                <option value="rice">Rice</option>
+                                <option value="wheat">Wheat</option>
+                              </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "container send-container-margin">
+            <div class = "row">
+                <div class = "col-md-6 offset-md-3">
+                    <div class = "row">
+                        <div id="quantity" class = "col-md-5 destination-label text-left">
+                            Quantity(In kg)
+                        </div>
+                        <div class = "col-md-7">
+                            <input id = "assetqty" name = "assetqty" type = "text" class = "input-text-size"></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "col-md-2 offset-md-5" style = "margin-top:3%">
+            <button type="submit" name="Submit">Create</button>
+        </div>
+    </form>
+    </body>
+</html>
